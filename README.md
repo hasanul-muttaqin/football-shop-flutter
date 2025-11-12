@@ -48,3 +48,18 @@ samples, guidance on mobile development, and a full API reference.
 - Jelaskan konsep "hot reload" di Flutter dan bagaimana bedanya dengan "hot restart".
   - Hot reload menambahkan perubahan kode ke VM dan menjalankan ulang `build` tanpa mengulang inisialisasi state—state saat ini dipertahankan.
   - Hot restart me-restart aplikasi dari awal: state direset, `main()` dijalankan ulang. Digunakan bila perubahan memengaruhi inisialisasi global.
+
+## Tugas 8
+
+- Jelaskan perbedaan antara Navigator.push() dan Navigator.pushReplacement() pada Flutter. Dalam kasus apa sebaiknya masing-masing digunakan pada aplikasi Football Shop kamu?
+  - `Navigator.push()` menambahkan halaman baru di atas stack, sehingga pengguna dapat kembali ke halaman sebelumnya dengan tombol back. Cocok saat membuka halaman formulir Tambah Produk dari beranda agar pengguna bisa kembali ke beranda tanpa menutup aplikasi.
+  - `Navigator.pushReplacement()` mengganti halaman saat ini dengan halaman baru (halaman lama dihapus dari stack). Cocok untuk navigasi dari Drawer ke Halaman Utama agar tidak menumpuk banyak halaman home di stack saat pengguna berkali-kali memilih menu yang sama.
+
+- Bagaimana kamu memanfaatkan hierarchy widget seperti Scaffold, AppBar, dan Drawer untuk membangun struktur halaman yang konsisten di seluruh aplikasi?
+  - `Scaffold` menyediakan kerangka halaman (AppBar, body, Drawer, SnackBar). `AppBar` memberi identitas halaman. `Drawer` menyediakan navigasi antar halaman (Halaman Utama dan Tambah Produk). Dengan pola ini, setiap halaman memiliki kerangka antarmuka yang sama sehingga pengalaman pengguna konsisten.
+
+- Dalam konteks desain antarmuka, apa kelebihan menggunakan layout widget seperti Padding, SingleChildScrollView, dan ListView saat menampilkan elemen-elemen form? Berikan contoh penggunaannya dari aplikasi kamu.
+  - `Padding` memberi ruang antar elemen sehingga form lebih mudah dibaca dan disentuh; digunakan di setiap field form. `SingleChildScrollView` memungkinkan konten form di-scroll saat tinggi layar terbatas/keyboard muncul; membungkus kolom form pada halaman Tambah Produk. `ListView` atau `Column` dengan scroll memudahkan komposisi banyak input secara vertikal tanpa overflow.
+
+- Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?
+  - Mengatur `ThemeData` dengan `ColorScheme.fromSeed(seedColor: Colors.green)` untuk theme hijau sebagai warna brand. Konsisten memakai variasi warna ini pada AppBar, Drawer header, dan aksen tombol sehingga seluruh komponen konsisten.
