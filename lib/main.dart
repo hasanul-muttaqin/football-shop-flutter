@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:football_shop/screens/home.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
+import 'package:provider/provider.dart';
+
+import 'screens/home.dart';
+import 'screens/login.dart';
+import 'theme/app_theme.dart';
 
 void main() => runApp(const MyApp());
 
@@ -8,13 +13,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Football Shop',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.green),
-        useMaterial3: true,
+    return Provider<CookieRequest>(
+      create: (_) => CookieRequest(),
+      child: MaterialApp(
+        title: '67 Sportswear',
+        debugShowCheckedModeBanner: false,
+        theme: AppTheme.light,
+        home: Consumer<CookieRequest>(
+          builder: (context, request, _) {
+            if (request.loggedIn) {
+              return const HomePage();
+            }
+            return const LoginPage();
+          },
+        ),
       ),
-      home: const HomePage(),
     );
   }
 }

@@ -65,3 +65,23 @@ Deskripsi Tugas
 
  - [x] Bagaimana kamu menyesuaikan warna tema agar aplikasi Football Shop memiliki identitas visual yang konsisten dengan brand toko?
 
+[] Memastikan deployment proyek tugas Django kamu telah berjalan dengan baik.
+[] Mengimplementasikan fitur registrasi akun pada proyek tugas Flutter.
+[] Membuat halaman login pada proyek tugas Flutter.
+[] Mengintegrasikan sistem autentikasi Django dengan proyek tugas Flutter.
+[] Membuat model kustom sesuai dengan proyek aplikasi Django.
+[] Membuat halaman yang berisi daftar semua item yang terdapat pada endpoint JSON di Django yang telah kamu deploy.
+  - [] Tampilkan name, price, description, thumbnail, category, dan is_featured dari masing-masing item pada halaman ini (dapat disesuaikan dengan field yang kalian buat sebelumnya).
+[] Membuat halaman detail untuk setiap item yang terdapat pada halaman daftar item.
+  - [] Memastikan halaman detail dapat diakses dengan menekan salah satu card item pada halaman daftar item.
+  - [] Tampilkan seluruh atribut pada model item kamu pada halaman detail.
+  - [] Tambahkan tombol untuk kembali ke halaman daftar item pada halaman detail.
+[] Melakukan filter pada halaman daftar item dengan hanya menampilkan item yang terasosiasi dengan pengguna yang login.
+[x] Menjawab beberapa pertanyaan berikut pada README.md pada root folder (tambahkan subjudul untuk setiap tugas):
+ - [x] Jelaskan mengapa kita perlu membuat model Dart saat mengambil/mengirim data JSON? Apa konsekuensinya jika langsung memetakan `Map<String, dynamic>` tanpa model (terkait validasi tipe, null-safety, maintainability)?
+ - [x] Jelaskan apa fungsi package `http` dan `CookieRequest` dalam tugas ini, serta perbedaan peran `http` vs `CookieRequest`.
+ - [x] Jelaskan mengapa instance `CookieRequest` perlu dibagikan ke semua komponen di aplikasi Flutter.
+ - [x] Jelaskan konfigurasi konektivitas yang diperlukan agar Flutter dapat berkomunikasi dengan Django. Mengapa kita perlu menambahkan `10.0.2.2` pada `ALLOWED_HOSTS`, mengaktifkan CORS dan pengaturan SameSite/cookie, dan menambahkan izin akses internet di Android? Apa yang akan terjadi jika konfigurasi tersebut tidak dilakukan dengan benar?
+ - [x] Jelaskan mekanisme pengiriman data mulai dari input hingga dapat ditampilkan pada Flutter.
+ - [x] Jelaskan mekanisme autentikasi dari login, register, hingga logout. Mulai dari input data akun pada Flutter ke Django hingga selesainya proses autentikasi oleh Django dan tampilnya menu pada Flutter.
+ - [x] Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).

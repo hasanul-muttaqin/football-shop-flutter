@@ -43,3 +43,18 @@ Date: 2025-11-12
 - Updated `README.md` with answers about navigation, page structure using Scaffold/AppBar/Drawer, layout widgets for forms, and theme consistency.
 
 - Checked off remaining items in `TODO.md` for this task.
+
+Date: 2025-11-16
+
+- Backend alignment:
+  - Enabled CORS/credential settings, added `10.0.2.2` to `ALLOWED_HOSTS`, and exposed JSON + auth endpoints (`/auth/login`, `/auth/register`, `/auth/logout`, `/products/create-mobile`, `/json/?mine=1`) in the Django `eshop_pbp` project so the Flutter app can authenticate and post data.
+
+- Flutter authentication flow:
+  - Added dependencies (`provider`, `pbp_django_auth`, `http`, `intl`) and wrapped `MaterialApp` with `Provider<CookieRequest>` to share the session.
+  - Implemented `LoginPage` and `RegisterPage`, wired `LeftDrawer` to trigger logout, and updated `HomePage` buttons to navigate to real screens instead of SnackBars.
+
+- Data integration:
+  - Created `Product` model + `ApiConfig` helper, added Android internet permission, and built network-aware screens: `ProductListPage` (list + filter + refresh), `ProductDetailPage`, and enhanced `ProductFormPage` to submit data to Django with validation for brand/stock.
+
+- Documentation:
+  - Answered the new discussion prompts inside `README.md`, checked-off `TODO.md`, and noted the release URLs and workflow requirements.
